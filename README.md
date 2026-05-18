@@ -4,7 +4,7 @@ A backend-based URL shortening service built using Node.js, Express, and MongoDB
 
 This project was created as an introductory backend development project to understand how APIs, databases, authentication systems, and server-side applications work together in a real-world application.
 
-The application allows users to create shortened URLs, redirect users using those short links, and securely manage authenticated functionality using JWT authentication.
+The application allows users to create shortened URLs, redirect users using those short links, and securely manage authenticated functionality using JWT authentication. It also includes analytics tracking and user-specific URL history management.
 
 ---
 
@@ -15,6 +15,8 @@ The application allows users to create shortened URLs, redirect users using thos
 - JWT-based authentication and authorization
 - User signup and login system
 - Protected routes
+- URL analytics dashboard
+- User-specific URL history
 - MongoDB database integration
 - REST API architecture
 - Secure password hashing
@@ -52,6 +54,8 @@ Server generates unique short ID
 URL stored in MongoDB
         ↓
 Short URL returned to user
+        ↓
+Analytics tracked on visits
         ↓
 Accessing /url/:id redirects user
 ```
@@ -112,6 +116,20 @@ Features include:
 - Protected API routes
 - Authorization middleware
 - Password hashing using bcrypt
+
+---
+
+## Analytics Dashboard
+
+The application includes analytics support for shortened URLs.
+
+Tracked information may include:
+- Total clicks
+- URL visit history
+- User-specific links
+- Usage tracking
+
+Users can manage and monitor their generated URLs through a personalized history system.
 
 ---
 
@@ -179,20 +197,21 @@ This project helped me understand:
 - Authentication and authorization
 - JWT implementation
 - Password hashing
-- Environment variable management
+- Database relationships
 - Backend project structuring
+- Analytics tracking systems
 
 ---
 
 ## Future Improvements
 
-- Custom short URLs
-- Link analytics dashboard
-- URL expiration support
+- Custom aliases for URLs
+- Advanced analytics graphs
+- Link expiration support
 - Rate limiting
-- User-specific URL history
 - QR code generation
-- Deployment support
+- Docker deployment
+- Public API documentation
 
 ---
 
