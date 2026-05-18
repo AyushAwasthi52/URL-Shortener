@@ -5,11 +5,14 @@ const authRoute = require('./routes/auth');
 const {connecttoMongoDB} = require('./connection');
 const path = require('path');
 const jwt = require('jsonwebtoken');
+const dotenv = require("dotenv");
+
+dotenv.config({path: "./config.env});
 
 const app = express();
 
-const PORT = 8000;
-const JWT_SECRET = 'Ayush@1234$#@';
+const PORT = process.env.PORT || 8000;
+const JWT_SECRET = process.env.JWT_SECRET || 'Ayush@1234$#@';
 
 // Middleware
 app.use(express.json());
@@ -44,7 +47,7 @@ app.get('/', (req, res) => {
 // Start server
 const startServer = async () => {
     try {
-        await connecttoMongoDB('mongodb://127.0.0.1:27017/short-url');
+        await connecttoMongoDB(process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/short-url');
         console.log('MongoDB Connected');
         
         app.listen(PORT, () => {
