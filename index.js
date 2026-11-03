@@ -7,7 +7,7 @@ const path = require('path');
 const jwt = require('jsonwebtoken');
 const dotenv = require("dotenv");
 
-dotenv.config({path: "./config.env});
+dotenv.config({path: "./config.env"});
 
 const app = express();
 
